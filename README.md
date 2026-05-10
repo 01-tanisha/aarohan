@@ -89,7 +89,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-The backend will start on `http://127.0.0.1:8000` by default.
+The backend will start on [https://aarohan-nine.vercel.app](https://aarohan-nine.vercel.app) by default.
 
 ### Start the React frontend
 
