@@ -13,7 +13,7 @@ function SiteFooter() {
         <div className="site-footer-links">
           <a href="/">Home</a>
           <span>|</span>
-          <a href="#">Contact Us</a>
+          <a href="/">Contact Us</a>
           <span>|</span>
           <a
             href="https://www.instagram.com/banasthali_vidyapith_official/"
