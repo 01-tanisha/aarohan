@@ -4,11 +4,10 @@ from django.http import JsonResponse
 from django.conf import settings
 from django.conf.urls.static import static
 from core.views import password_reset_page
-
+from django.shortcuts import render
 
 def home(request):
-    return JsonResponse({"message": "Backend running successfully!"})
-
+    return render(request, "index.html")
 
 urlpatterns = [
     path('', home),
