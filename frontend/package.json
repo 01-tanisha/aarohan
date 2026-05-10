@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://aarohan-nine.vercel.app",
+  "proxy": "https://aarohan-mauve.vercel.app",
   "eslintConfig": {
     "extends": [
       "react-app",

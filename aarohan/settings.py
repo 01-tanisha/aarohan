@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "10.61.61.240",
-    'aarohan-nine.vercel.app',
+    'aarohan-mauve.vercel.app',
 ]
 
 
@@ -160,7 +160,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
     "http://127.0.0.1:3001",
     "http://10.61.61.240:3001",
-    "https://aarohan-nine.vercel.app",
+    "https://aarohan-mauve.vercel.app",
     "https://aarohan-7mep.vercel.app"
 ]
 
@@ -171,7 +171,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3001",
     "http://127.0.0.1:3001",
     "http://10.61.61.240:3001",
-    "https://aarohan-nine.vercel.app",
+    "https://aarohan-mauve.vercel.app",
     "https://aarohan-7mep.vercel.app"
 ]
 # IMPORTANT: Session & CSRF cookies for React
@@ -187,7 +187,7 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "snehamishra4002@gmail.com")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "fcqfwmrxtszedbbj")
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "sneha24718mishra@gmail.com")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "tanishasikarwar1@gmail.com")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "tani@12345678")
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "tanishasikarwar1@gmail.com")
 FRONTEND_BASE_URL = os.getenv("FRONTEND_BASE_URL", "http://10.61.61.240:3000")

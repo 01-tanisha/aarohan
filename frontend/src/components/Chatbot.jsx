@@ -61,7 +61,7 @@ const Chatbot = () => {
   // Get chatbot response from backend
   const getBotResponse = async (userMessage) => {
     try {
-      const response = await fetch("https://aarohan-nine.vercel.app/api/chatbot/", {
+      const response = await fetch("https://aarohan-mauve.vercel.app/api/chatbot/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
