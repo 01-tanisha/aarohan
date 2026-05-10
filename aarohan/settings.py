@@ -161,6 +161,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3001",
     "http://10.61.61.240:3001",
     "https://aarohan-nine.vercel.app",
+    "https://aarohan-7mep.vercel.app"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -171,6 +172,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:3001",
     "http://10.61.61.240:3001",
     "https://aarohan-nine.vercel.app",
+    "https://aarohan-7mep.vercel.app"
 ]
 # IMPORTANT: Session & CSRF cookies for React
 SESSION_COOKIE_SAMESITE = "Lax"
