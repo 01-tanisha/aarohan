@@ -24,13 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$+slith)$)m!3*qr-4!xx224z)wdvol$z#-!#e@=v(emp=k_)g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "10.61.61.240",
-    'aarohan-nine.vercel.app',
+    "aarohan-nine.vercel.app",
+    "aarohan-7mep.vercel.app",
+    "*.vercel.app",  # Allow all Vercel preview deployments
+    "vercel.app",
 ]
 
 
@@ -131,7 +134,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+# Only add staticfiles_dirs if the directory exists
+if os.path.exists(BASE_DIR / 'static'):
+    STATICFILES_DIRS = [BASE_DIR / 'static']
+else:
+    STATICFILES_DIRS = []
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR
 
@@ -184,10 +191,10 @@ SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
 # ===== EMAIL (Forgot Password) =====
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "snehamishra4002@gmail.com")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "fcqfwmrxtszedbbj")
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "sneha24718mishra@gmail.com")
-FRONTEND_BASE_URL = os.getenv("FRONTEND_BASE_URL", "http://10.61.61.240:3000")
+EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.gmail.com")
+EMAIL_PORT = int(os.getenv("EMAIL_PORT", 587))
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "True") == "True"
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "noreply@aarohan.com")
+FRONTEND_BASE_URL = os.getenv("FRONTEND_BASE_URL", "https://aarohan-nine.vercel.app")
