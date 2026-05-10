@@ -26,12 +26,10 @@ SECRET_KEY = 'django-insecure-$+slith)$)m!3*qr-4!xx224z)wdvol$z#-!#e@=v(emp=k_)g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "10.61.61.240",
-    'aarohan-mauve.vercel.app',
-]
+ALLOWED_HOSTS = os.getenv(
+    "ALLOWED_HOSTS",
+    "localhost,127.0.0.1,10.61.61.240,.vercel.app"
+).split(",")
 
 
 # Application definition
@@ -131,7 +129,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [BASE_DIR / 'static'] if (BASE_DIR / 'static').exists() else []
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR
 
@@ -164,6 +162,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://aarohan-7mep.vercel.app"
 ]
 
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.vercel\.app$",
+]
+
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -172,14 +174,15 @@ CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:3001",
     "http://10.61.61.240:3001",
     "https://aarohan-mauve.vercel.app",
-    "https://aarohan-7mep.vercel.app"
+    "https://aarohan-7mep.vercel.app",
+    "https://*.vercel.app"
 ]
 # IMPORTANT: Session & CSRF cookies for React
 SESSION_COOKIE_SAMESITE = "Lax"
 CSRF_COOKIE_SAMESITE = "Lax"
 
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
 SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
 # ===== EMAIL (Forgot Password) =====
