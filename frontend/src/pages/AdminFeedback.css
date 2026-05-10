@@ -1,0 +1,66 @@
+.admin-feedback-page {
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.admin-feedback-content {
+  padding: 24px;
+}
+
+.admin-feedback-card {
+  background: #ffffff;
+  border: 1px solid #e0e4e8;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.admin-feedback-error {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #fff3f3;
+  border: 1px solid #f0caca;
+  color: #b23b3b;
+  font-weight: 600;
+}
+
+.admin-feedback-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-feedback-table th,
+.admin-feedback-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #edf1f5;
+  text-align: left;
+  vertical-align: top;
+}
+
+.admin-feedback-table th {
+  background: #f7f9fc;
+  color: #1e3c72;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.admin-feedback-table td {
+  color: #2b3445;
+  font-size: 14px;
+}
+
+.admin-feedback-stars {
+  color: #f5a623;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+  .admin-feedback-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

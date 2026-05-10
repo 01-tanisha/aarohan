@@ -1,0 +1,105 @@
+.activity-page{
+padding:40px;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.create-btn{
+width:40px;
+height:40px;
+border-radius:50%;
+font-size:22px;
+background:#1976d2;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.activity-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.activity-table th,
+.activity-table td{
+border:1px solid #ccc;
+padding:10px;
+text-align:center;
+}
+
+.edit-btn{
+border:none;
+padding:6px 10px;
+margin-right:5px;
+cursor:pointer;
+}
+
+.delete-btn{
+color:rgb(18, 17, 17);
+border:none;
+padding:6px 10px;
+cursor:pointer;
+}
+
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.modal-content{
+background:white;
+padding:25px;
+width:380px;
+border-radius: 12px;
+display:flex;
+flex-direction:column;
+gap:12px;
+position:relative;
+z-index:1001;
+box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+animation: fadeIn 0.3s ease; 
+}
+
+
+
+.modal-content input,
+.modal-content select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+  border: 1px solid #1976d2;   /* blue highlight */
+}
+.modal-buttons{
+display:flex;
+justify-content:flex-end;
+gap:10px;
+}
+
+
+
+.search-bar {
+  padding: 8px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}

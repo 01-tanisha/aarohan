@@ -1,0 +1,134 @@
+.feedback-page-container .main-content {
+  padding: 24px;
+}
+
+.feedback-main-content {
+  background: linear-gradient(180deg, #f6f8fc 0%, #eef3fb 100%);
+}
+
+.feedback-card {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #e3ebf6;
+  box-shadow: 0 12px 30px rgba(26, 40, 74, 0.08);
+}
+
+.feedback-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.feedback-summary > div {
+  padding: 16px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+  border: 1px solid #dbe7f6;
+}
+
+.feedback-label {
+  font-size: 13px;
+  color: #66758f;
+  margin-bottom: 6px;
+}
+
+.feedback-summary h2 {
+  font-size: 20px;
+  color: #153158;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.feedback-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #153158;
+  margin-bottom: 10px;
+}
+
+.feedback-stars {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.star-btn {
+  border: none;
+  background: #edf2fb;
+  color: #b5c2d9;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.star-btn:hover,
+.star-btn.selected {
+  background: #2459d6;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.feedback-field textarea {
+  width: 100%;
+  border: 1px solid #d8e5f5;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 15px;
+  resize: vertical;
+  min-height: 140px;
+  outline: none;
+  background: #fbfdff;
+}
+
+.feedback-field textarea:focus {
+  border-color: #2459d6;
+  box-shadow: 0 0 0 3px rgba(36, 89, 214, 0.12);
+}
+
+.feedback-message {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #f3f8ff;
+  border: 1px solid #d6e5ff;
+  color: #234b98;
+  font-weight: 600;
+}
+
+.feedback-submit-btn {
+  align-self: flex-start;
+  border: none;
+  background: linear-gradient(135deg, #244ec9, #173a9a);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(36, 78, 201, 0.22);
+}
+
+.feedback-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .feedback-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .feedback-submit-btn {
+    width: 100%;
+  }
+}

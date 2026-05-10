@@ -1,0 +1,97 @@
+.leaderboard-main-content {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+.leaderboard-chart-wrap {
+  width: 100%;
+  min-width: 0;
+  height: 400px;
+  margin-bottom: 32px;
+}
+
+.leaderboard-table-container {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.leaderboard-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.leaderboard-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.leaderboard-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.leaderboard-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+@media (max-width: 900px) {
+  .leaderboard-main-content {
+    padding: 16px;
+  }
+
+  .leaderboard-chart-wrap {
+    height: 340px;
+    margin-bottom: 22px;
+  }
+
+  .leaderboard-table {
+    min-width: 560px;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .leaderboard-main-content {
+    padding: 12px;
+  }
+
+  .leaderboard-chart-wrap {
+    height: 300px;
+  }
+
+  .leaderboard-table {
+    min-width: 520px;
+  }
+}
+
+/* Keep leaderboard sidebar identical to other student pages */
+@media (min-width: 901px) {
+  .student-dashboard-container > .sidebar {
+    width: 200px !important;
+    min-width: 200px !important;
+    flex: 0 0 200px !important;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+}

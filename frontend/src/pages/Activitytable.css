@@ -1,0 +1,445 @@
+.activity-container {
+  margin-left: 220px;
+  padding: 30px;
+  width: calc(100% - 220px); 
+  min-height: calc(100vh - 80px); 
+  font-family: Arial, sans-serif;
+  background-color: #fff; 
+}
+
+
+.activity-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Table */
+.activity-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.activity-table th,
+.activity-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.activity-table th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.activity-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Buttons */
+.view-btn,
+.enroll-btn,
+.close-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* View Button */
+.view-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Enroll Button */
+.enroll-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.enroll-btn:hover {
+  background-color: #1e8449;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #ffffff !important; 
+  color: #000000 !important;
+  padding: 25px 20px;      
+  width: 400px;            
+  max-width: 90%;         
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+
+.modal-content * {
+  opacity: 1 !important;            
+  background-color: inherit !important; 
+  color: inherit !important;
+}
+
+.modal-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg, #3498db, #27ae60);
+  border-radius: 16px 16px 0 0;
+}
+
+.modal-content h3 {
+  margin-top: 10px;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 22px;
+}
+
+.modal-content p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 15px;
+}
+
+.modal-content strong {
+  color: #333;
+}
+
+.modal-content ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.modal-content ul li {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.modal-content .enroll-btn {
+  width: 100%;
+  margin-top: 15px;
+  background: #27ae60;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.modal-content .enroll-btn:hover {
+  background: #1e8449;
+}
+
+.close-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: #e74c3c;           
+  color: rgb(70, 65, 65);
+  padding: 12px 0;               
+  border-radius: 10px;            
+  font-size: 16px;               
+  font-weight: bold;              
+  border: none;                  
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+  transition: all 0.3s ease;    
+}
+
+.close-btn:hover {
+  background: #c0392b;            
+  transform: translateY(-2px);    
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25); 
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== SEARCH BAR ===== */
+.search-input {
+  width: 100%;
+  max-width: 400px;       
+  padding: 10px 15px;     
+  margin: 15px 0 25px 0;  
+  border: 1px solid #ccc; 
+  border-radius: 10px;    
+  font-size: 16px;        
+  outline: none;          
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+  transition: all 0.3s ease; 
+}
+
+/* Focus effect */
+.search-input:focus {
+  border-color: #3498db;             
+  box-shadow: 0 4px 12px rgba(52,152,219,0.2); 
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #1b2944; 
+  color: white;
+  padding: 20px 10px; 
+  border-radius: 0;   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;      
+  position: fixed;    
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  border-radius: 0;
+  cursor: pointer;
+  background-color: #1b2944; 
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.sidebar-menu li:hover,
+.sidebar-menu li.active {
+  background-color: #144d8c; 
+}
+
+.sidebar-bottom {
+  margin-top: auto; 
+}
+
+.student-sidebar-bottom {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 8px;
+  padding: 0 8px;
+}
+
+.student-user-menu {
+  background-color: #2c5588;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.student-user-arrow {
+  margin-left: 6px;
+}
+
+.student-user-dropdown {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 12px);
+  width: 100%;
+  min-width: 180px;
+  background-color: #1f3f66;
+  border-radius: 6px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.student-dropdown-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.student-dropdown-btn:hover {
+  background-color: #2c5588;
+}
+
+.enroll-btn{
+background:green;
+color:white;
+border:none;
+padding:6px 10px;
+margin-left:6px;
+cursor:pointer;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  margin-top: 20px; /* Optional: space above the button */
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.search-bar {
+  margin-bottom: 30px; /* GAP between search bar and table */
+  text-align: center;   /* Center the search bar */
+}
+
+.search-bar input {
+  width: 400px;          /* Expand the search bar */
+  max-width: 90%;        /* Responsive for smaller screens */
+  padding: 10px 15px;    /* Make input bigger vertically */
+  font-size: 16px;       /* Slightly bigger text */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.student-dashboard-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #2c3e50;
+  min-height: 100vh;
+  color: white;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  padding: 15px;
+  cursor: pointer;
+}
+
+.sidebar-menu li:hover {
+  background-color: #34495e;
+}
+
+.sidebar-menu .active {
+  background-color: #34495e;
+}
+
+.activity-page {
+  flex: 1;
+  padding: 20px;
+  min-width: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.activity-table-shell {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.activity-table-shell .activity-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  display: table;
+  overflow: visible;
+}
+
+.activity-table-shell .activity-table th,
+.activity-table-shell .activity-table td {
+  padding: 12px 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Keep student sidebar width and option widths consistent across pages. */
+.student-dashboard-container > .sidebar {
+  width: 200px;
+  min-width: 200px;
+  flex: 0 0 200px;
+}
+
+.student-dashboard-container > .sidebar .sidebar-menu li {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .activity-page {
+    padding: 16px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .activity-table-shell .activity-table {
+    min-width: 580px;
+  }
+
+  .activity-table-shell .activity-table th,
+  .activity-table-shell .activity-table td {
+    padding: 10px 8px;
+  }
+
+  .activity-table-shell .activity-table {
+    display: table !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .activity-page {
+    padding: 12px;
+  }
+
+  .activity-table-shell .activity-table {
+    min-width: 520px;
+    display: table !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+}

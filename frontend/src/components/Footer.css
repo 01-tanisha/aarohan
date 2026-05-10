@@ -1,0 +1,27 @@
+/* Offset footer from fixed sidebar */
+.footer-wrapper, .main-content {
+  margin-left: 200px; /* same width as sidebar */
+}
+
+/* On smaller screens, remove offset */
+@media (max-width: 768px) {
+  .footer-wrapper, .main-content {
+    margin-left: 0; /* no offset on mobile */
+  }
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
+
+.main-content {
+  flex: 1; /* pushes footer to bottom */
+  padding: 20px;
+  box-sizing: border-box;
+}
+.footer-wrapper {
+  position: relative; /* prevents overlap under sidebar */
+  z-index: 1;         /* ensures footer stays above main content background but below sidebar */
+}

@@ -1,0 +1,49 @@
+.teacher-leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.teacher-leaderboard-table th,
+.teacher-leaderboard-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.teacher-leaderboard-table th {
+  background: #f4f6fb;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.teacher-leaderboard-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.teacher-leaderboard-table tbody tr:nth-child(even) {
+  background: #fbfbfb;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 24px;
+  color: #6b7280;
+}
+
+.leaderboard-card {
+  margin-top: 20px;
+}
+.rank-cell {
+  font-weight: 700;
+  color: #1f6ad6;
+  font-size: 16px;
+}
+
+.attendance-cell {
+  font-weight: 600;
+  color: #059669;
+}

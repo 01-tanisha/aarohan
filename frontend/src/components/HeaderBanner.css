@@ -1,0 +1,44 @@
+.global-header-banner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.global-header-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.global-header-logo-overlay {
+  position: absolute;
+  top: calc(50% + 4px);
+  left: 52px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.global-header-logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+.global-header-divider {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, #1e3a5f, #2d5a87, #1e3a5f);
+}
+
+@media (max-width: 768px) {
+  .global-header-logo-overlay {
+    top: calc(50% + 3px);
+    left: 38px;
+  }
+
+  .global-header-logo {
+    width: 88px;
+    height: 88px;
+  }
+}

@@ -1,0 +1,262 @@
+.student-result-container .main-content {
+  padding: 24px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.result-main-content {
+  background: linear-gradient(180deg, #f6f8fc 0%, #eef3fb 100%);
+}
+
+.print-btn {
+  border: none;
+  background: linear-gradient(135deg, #244ec9, #173a9a);
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(36, 78, 201, 0.22);
+}
+
+.result-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.result-subtitle {
+  margin-top: 8px;
+  color: #5d6b84;
+  font-size: 15px;
+}
+
+.result-photo {
+  width: 140px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 30px rgba(30, 58, 95, 0.18);
+  background: #f1f4fb;
+}
+
+.result-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #6b778d;
+}
+
+.marksheet-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 12px 30px rgba(26, 40, 74, 0.08);
+  border: 1px solid rgba(34, 77, 128, 0.08);
+}
+
+.marksheet-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #e7edf7;
+}
+
+.marksheet-heading h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #153158;
+}
+
+.marksheet-heading p {
+  margin: 6px 0 0;
+  color: #5d6b84;
+  font-weight: 600;
+}
+
+.marksheet-label {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #eaf2ff;
+  color: #2459d6;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+}
+
+.result-field {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f8fbff;
+  border: 1px solid #e5edf7;
+}
+
+.result-field span,
+.result-remarks span,
+.score-box span {
+  display: block;
+  font-size: 13px;
+  color: #66758f;
+  margin-bottom: 6px;
+}
+
+.result-field strong,
+.score-box strong {
+  display: block;
+  color: #152238;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.result-score-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.score-box {
+  padding: 18px 16px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+  border: 1px solid #dbe7f6;
+}
+
+.score-box strong {
+  font-size: 32px;
+}
+
+.grade-box strong {
+  color: #2459d6;
+}
+
+.result-remarks {
+  margin-top: 22px;
+  padding: 18px 16px;
+  border-radius: 14px;
+  background: #fffdf7;
+  border: 1px solid #f2e5c6;
+}
+
+.result-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 34px;
+}
+
+.signature-block {
+  min-width: 200px; /* Updated width for three signature blocks */
+  text-align: center;
+  color: #4b5870;
+  font-weight: 600;
+}
+
+.signature-line {
+  width: 100%;
+  border-top: 1px solid #7f8ba3;
+  margin-bottom: 8px;
+/* Additional styles for three signature blocks */
+.signature-blocks-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+}
+
+.result-remarks p {
+  margin: 0;
+  color: #2d3646;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.result-empty-state {
+  padding: 18px;
+  border-radius: 14px;
+  background: #fff3f3;
+  color: #b23b3b;
+  border: 1px solid #f0caca;
+}
+
+@media print {
+  .no-print,
+  .sidebar,
+  .student-dashboard-container .sidebar,
+  .student-dashboard-container .student-sidebar-bottom,
+  .chatbot-container,
+  .chatbot-toggle,
+  .chatbot-window,
+  .Chatbot,
+  .chatbot,
+  .chat-bot,
+  .global-header-banner,
+  .global-header-divider,
+  .site-footer {
+    display: none !important;
+  }
+
+  .student-dashboard-container {
+    display: block;
+    background: #ffffff !important;
+  }
+
+  .student-result-container .main-content {
+    padding: 0;
+  }
+
+  .result-main-content {
+    background: #ffffff !important;
+  }
+
+  .marksheet-card {
+    box-shadow: none;
+    border: 1px solid #d8e0ef;
+    page-break-inside: avoid;
+  }
+
+  .result-photo {
+    box-shadow: none;
+  }
+
+  .print-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .result-page-header {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .marksheet-top,
+  .result-footer {
+    flex-direction: column;
+  }
+
+  .result-grid,
+  .result-score-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .result-photo {
+    width: 120px;
+    height: 150px;
+  }
+}
