@@ -27,11 +27,11 @@ SECRET_KEY = 'django-insecure-$+slith)$)m!3*qr-4!xx224z)wdvol$z#-!#e@=v(emp=k_)g
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "10.61.61.240",
+    'localhost',
+    '127.0.0.1',
+    '10.61.61.240',
+    'aarohan-nine.vercel.app',
 ]
-
 
 
 # Application definition
