@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "sh vercel_build.sh",
+  "buildCommand": "pip install -r requirements.txt && python manage.py migrate --noinput && python manage.py collectstatic --noinput",
   "builds": [
     {
       "src": "aarohan/wsgi.py",
