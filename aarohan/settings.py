@@ -24,12 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$+slith)$)m!3*qr-4!xx224z)wdvol$z#-!#e@=v(emp=k_)g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "10.61.61.240",
+    'aarohan-nine.vercel.app',
 ]
 
 
@@ -159,6 +160,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
     "http://127.0.0.1:3001",
     "http://10.61.61.240:3001",
+    "https://aarohan-nine.vercel.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -168,6 +170,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3001",
     "http://127.0.0.1:3001",
     "http://10.61.61.240:3001",
+    "https://aarohan-nine.vercel.app",
 ]
 # IMPORTANT: Session & CSRF cookies for React
 SESSION_COOKIE_SAMESITE = "Lax"
