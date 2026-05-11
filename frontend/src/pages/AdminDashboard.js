@@ -42,7 +42,7 @@ export default function AdminDashboard() {
 
   // ✅ FETCH DATA
   useEffect(() => {
-    fetch("https://aarohan-mauve.vercel.app/api/dashboard/",{
+    fetch("https://aarohan-git-main-01-tanishas-projects.vercel.app/api/dashboard/",{
       credentials: "include"
     })
       .then((res) => res.json())

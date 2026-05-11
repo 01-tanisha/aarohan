@@ -89,7 +89,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-The backend will start on [aarohan-mauve.vercel.app](aarohan-mauve.vercel.app) by default.
+The backend will start on [aarohan-git-main-01-tanishas-projects.vercel.app](aarohan-git-main-01-tanishas-projects.vercel.app) by default.
 
 ### Start the React frontend
 

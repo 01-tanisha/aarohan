@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import HeaderBanner from "../components/HeaderBanner";
 
 
-const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000`;
+const API_BASE = "https://aarohan-git-main-01-tanishas-projects.vercel.app";
 const API_URL = API_BASE;
 
 
