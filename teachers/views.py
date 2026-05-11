@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
-from rest_framework.decorators import api_view, permission_classes, authentication_classes
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from datetime import date
 from .models import Announcement, Specialization
@@ -154,6 +154,7 @@ def bulk_attendance(request):
 @api_view(["GET"])
 @authentication_classes([CsrfExemptSessionAuthentication])
 @permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def get_attendance_entries(request):
     if not hasattr(request.user, "teacher"):
         return Response({"error": "Only teachers allowed"}, status=403)
@@ -233,6 +234,7 @@ def teacher_students(request):
 
 # GET all teachers
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def teacher_list(request):
     teachers = Teacher.objects.all()
     return Response([
