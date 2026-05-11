@@ -162,6 +162,9 @@ CORS_ALLOW_HEADERS = [
     "user-agent",
     "x-csrftoken",
     "x-requested-with",
+]
+
+CORS_ALLOW_METHODS = [
     "DELETE",
     "GET",
     "OPTIONS",
@@ -216,3 +219,16 @@ FRONTEND_BASE_URL = os.getenv(
     "FRONTEND_BASE_URL",
     "https://aarohanfrontend-git-main-01-tanishas-projects.vercel.app"
 )
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "students.authentication.CsrfExemptSessionAuthentication",
+    ],
+
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.AllowAny",
+    ],
+
+    "EXCEPTION_HANDLER": "aarohan.exceptions.custom_exception_handler",
+}
+
