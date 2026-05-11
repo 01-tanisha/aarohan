@@ -232,3 +232,15 @@ REST_FRAMEWORK = {
     "EXCEPTION_HANDLER": "aarohan.exceptions.custom_exception_handler",
 }
 
+# Behind proxies (Vercel) ensure Django knows requests were HTTPS
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+# Make session cookie HttpOnly (recommended) and ensure CSRF cookie is readable by JS
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = False
+
+# Notes: Vercel project-level protection (SSO / Password Protect) will return
+# an HTML login page before requests reach Django. Disable that protection
+# for this project (or add a bypass) so API endpoints can return JSON and set
+# cookies for the frontend.
+
