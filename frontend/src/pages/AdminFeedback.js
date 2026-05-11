@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./AdminDashboard.css";
 import "./AdminFeedback.css";
 
-const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000`;
+const API_BASE = (process.env.REACT_APP_API_BASE || "https://aarohan-git-main-01-tanishas-projects.vercel.app").trim().replace(/\/$/, "");
 
 function StarDisplay({ rating }) {
   return <span className="admin-feedback-stars">{"★".repeat(rating)}{"☆".repeat(5 - rating)}</span>;
@@ -77,3 +77,4 @@ export default function AdminFeedback() {
     </div>
   );
 }
+

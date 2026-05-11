@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./StudentDashboard.css"; 
 
+const API_BASE = (process.env.REACT_APP_API_BASE || "https://aarohan-git-main-01-tanishas-projects.vercel.app").trim().replace(/\/$/, "");
+
 function FAQ() {
   const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
@@ -11,7 +13,7 @@ function FAQ() {
   const studentLabel = studentName || storedUser?.username || "Student";
 
   useEffect(() => {
-    fetch(`${window.location.protocol}//${window.location.hostname}:8000/api/profile-summary/`, {
+    fetch(`${API_BASE}/api/profile-summary/`, {
       credentials: "include",
     })
       .then((res) => res.json())

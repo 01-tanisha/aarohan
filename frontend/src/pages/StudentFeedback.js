@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./StudentDashboard.css";
 import "./StudentFeedback.css";
 
-const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000`;
+const API_BASE = (process.env.REACT_APP_API_BASE || "https://aarohan-git-main-01-tanishas-projects.vercel.app").trim().replace(/\/$/, "");
 
 function StarRating({ value, onChange, disabled }) {
   return (
@@ -233,3 +233,4 @@ export default function StudentFeedback() {
     </div>
   );
 }
+

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./TeacherDashboard.css";
 import TeacherCalendar from "./TeacherCalendar";
 
-const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000`;
+const API_BASE = (process.env.REACT_APP_API_BASE || "https://aarohan-git-main-01-tanishas-projects.vercel.app").trim().replace(/\/$/, "");
 
 function TeacherDashboard() {
   const navigate = useNavigate();

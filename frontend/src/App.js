@@ -28,7 +28,7 @@ import SiteFooter from "./components/SiteFooter";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "./responsive.css";
 
-const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000`;
+const API_BASE = (process.env.REACT_APP_API_BASE || "https://aarohan-git-main-01-tanishas-projects.vercel.app").trim().replace(/\/$/, "");
 
 function App() {
   const location = useLocation();

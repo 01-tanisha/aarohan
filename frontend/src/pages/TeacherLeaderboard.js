@@ -10,7 +10,7 @@ import {
 } from "recharts";
 import "./TeacherLeaderboard.css";
 
-const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000`;
+const API_BASE = (process.env.REACT_APP_API_BASE || "https://aarohan-git-main-01-tanishas-projects.vercel.app").trim().replace(/\/$/, "");
 
 function TeacherLeaderboard() {
   const navigate = useNavigate();

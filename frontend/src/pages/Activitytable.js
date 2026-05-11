@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Activitytable.css";
 
 function Activitytable() {
-  const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000`;
+  const API_BASE = (process.env.REACT_APP_API_BASE || "https://aarohan-git-main-01-tanishas-projects.vercel.app").trim().replace(/\/$/, "");
   const API = `${API_BASE}/api`;
   const navigate = useNavigate();
   const [activities, setActivities] = useState([]);

@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 
-const API_BASE = "https://aarohan-git-main-01-tanishas-projects.vercel.app";
+const API_BASE = (process.env.REACT_APP_API_BASE || "https://aarohan-git-main-01-tanishas-projects.vercel.app").trim().replace(/\/$/, "");
 const API_URL = API_BASE;
 
 const Login = () => {

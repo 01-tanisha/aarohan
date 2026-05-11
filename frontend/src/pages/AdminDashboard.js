@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AdminDashboard.css';
 
-const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000`;
+const API_BASE = (process.env.REACT_APP_API_BASE || "https://aarohan-git-main-01-tanishas-projects.vercel.app").trim().replace(/\/$/, "");
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ export default function AdminDashboard() {
 
   // ✅ FETCH DATA
   useEffect(() => {
-    fetch("https://aarohan-git-main-01-tanishas-projects.vercel.app/api/dashboard/",{
+    fetch(`${API_BASE}/api/dashboard/`,{
       credentials: "include"
     })
       .then((res) => res.json())

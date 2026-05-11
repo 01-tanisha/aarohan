@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Chatbot.css";
 
+const API_BASE = (process.env.REACT_APP_API_BASE || "https://aarohan-git-main-01-tanishas-projects.vercel.app").trim().replace(/\/$/, "");
+
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -61,7 +63,7 @@ const Chatbot = () => {
   // Get chatbot response from backend
   const getBotResponse = async (userMessage) => {
     try {
-      const response = await fetch("aarohan-git-main-01-tanishas-projects.vercel.app/api/chatbot/", {
+      const response = await fetch(`${API_BASE}/api/chatbot/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
