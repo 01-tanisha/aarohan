@@ -133,16 +133,39 @@ const Login = () => {
       window.location.href = targetRoute;
 
     } catch (err) {
-      if (err.response?.status === 401) {
-        setError("Invalid username or password");
-      } else if (err.response?.status === 403) {
-        setError("Authentication failed. Please try again.");
-      } else {
-        setError("Backend server not reachable");
-      }
-    } finally {
-      setLoading(false);
-    }
+  console.log("LOGIN ERROR:", err);
+  console.log("RESPONSE:", err.response);
+  console.log("DATA:", err.response?.data);
+
+  if (err.response?.status === 401) {
+    setError("Invalid username or password");
+
+  } else if (err.response?.status === 403) {
+    setError(
+      err.response?.data?.detail ||
+      "Authentication failed"
+    );
+
+  } else if (err.response?.status === 400) {
+    setError(
+      JSON.stringify(err.response?.data) ||
+      "Bad request"
+    );
+
+  } else if (err.response) {
+    setError(
+      `Server Error ${err.response.status}`
+    );
+
+  } else {
+    setError(
+      err.message || "Network error"
+    );
+  }
+}
+finally {
+  setLoading(false);
+}
   };
 
   return (
