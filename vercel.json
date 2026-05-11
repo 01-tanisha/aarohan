@@ -1,14 +1,9 @@
 {
   "version": 2,
-  "buildCommand": "pip install -r requirements.txt && python manage.py migrate --noinput && python manage.py collectstatic --noinput",
   "builds": [
     {
       "src": "aarohan/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.11"
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [

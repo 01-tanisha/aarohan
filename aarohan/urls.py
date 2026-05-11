@@ -4,11 +4,12 @@ from django.http import JsonResponse
 from django.conf import settings
 from django.conf.urls.static import static
 from core.views import password_reset_page
-from django.shortcuts import render
+from django.http import JsonResponse
 
 def home(request):
-    return render(request, "index.html")
-
+    return JsonResponse({
+        "message": "Backend running successfully!"
+    })
 urlpatterns = [
     path('', home),
     path('reset-password/<str:uidb64>/<str:token>/', password_reset_page),

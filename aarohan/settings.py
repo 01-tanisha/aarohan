@@ -26,10 +26,12 @@ SECRET_KEY = 'django-insecure-$+slith)$)m!3*qr-4!xx224z)wdvol$z#-!#e@=v(emp=k_)g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = os.getenv(
-    "ALLOWED_HOSTS",
-    "localhost,127.0.0.1,10.61.61.240,.vercel.app"
-).split(",")
+ALLOWED_HOSTS = [
+    "aarohan-mauve.vercel.app",
+    "aarohan-95zwh6vuo-01-tanishas-projects.vercel.app",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
@@ -174,8 +176,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:3001",
     "http://10.61.61.240:3001",
     "https://aarohan-mauve.vercel.app",
-    "https://aarohan-7mep.vercel.app",
-    "https://*.vercel.app"
+    "https://aarohan-95zwh6vuo-01-tanishas-projects.vercel.app",
 ]
 # IMPORTANT: Session & CSRF cookies for React
 SESSION_COOKIE_SAMESITE = "Lax"
