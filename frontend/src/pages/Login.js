@@ -105,10 +105,12 @@ const Login = () => {
     try {
       // Login
       await axios.post(
-        `${API_BASE}/api/login/`,
-        formData,
-        { withCredentials: true }
-      );
+  `${API_BASE}/api/login/`,
+  data,
+  {
+    withCredentials: true
+  }
+);
 
       //  Get user
       const { data: userData } = await axios.get(

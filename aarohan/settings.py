@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$+slith)$)m!3*qr-4!xx224z)wdvol$z#-!#e@=v(emp=k_)g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     ".vercel.app",
@@ -177,11 +177,11 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.vercel.app",
 ]
 # IMPORTANT: Session & CSRF cookies for React
-SESSION_COOKIE_SAMESITE = "Lax"
-CSRF_COOKIE_SAMESITE = "Lax"
+SESSION_COOKIE_SAMESITE = "None"
+CSRF_COOKIE_SAMESITE = "None"
 
-SESSION_COOKIE_SECURE = not DEBUG
-CSRF_COOKIE_SECURE = not DEBUG
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
 # ===== EMAIL (Forgot Password) =====
@@ -190,6 +190,9 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "tanishasikarwar1@gmail.com")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "tani@12345678")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "tanishasikarwar1@gmail.com")
-FRONTEND_BASE_URL = os.getenv("FRONTEND_BASE_URL", "http://10.61.61.240:3000")
+FRONTEND_BASE_URL = os.getenv(
+    "FRONTEND_BASE_URL",
+    "https://aarohanfrontend-git-main-01-tanishas-projects.vercel.app"
+)
