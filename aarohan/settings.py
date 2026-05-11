@@ -152,6 +152,25 @@ REST_FRAMEWORK = {
 # ===== CORS / CSRF CONFIG =====
 CORS_ALLOW_CREDENTIALS = True
 
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -165,6 +184,7 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://.*\.vercel\.app$",
 ]
+CORS_ALLOW_ALL_ORIGINS = False
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
